@@ -1,4 +1,4 @@
-const mysql = require('mysql');
+const postgres = require('pg');
 
 // Set database connection credentials
 const config = {
@@ -9,8 +9,12 @@ const config = {
 };
 
 
- // Create a MySQL pool
- const pool = mysql.createPool(config); 
+ // Create a postgres pool
+
+ const pool = new postgres.Pool(config);
+
+
+  
 
 // Export the pool
 module.exports = pool;
